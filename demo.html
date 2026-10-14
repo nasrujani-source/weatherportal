@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo Sessions &amp; Videos — Anzee Tech Solution</title>
+<meta name="description" content="Watch course preview videos and book a free live online demo session with an Anzee Tech Solution trainer before you enroll.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="offer-strip">Every course, every batch — <strong>10% off</strong>, always. Ask us at enrollment.</div>
+
+<header class="site-header">
+  <div class="header-row">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">AT</span>
+      <span class="logo-text">ANZEE TECH SOLUTION<small>IT Training &amp; Freelance Services</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="services.html">Services &amp; Careers</a>
+      <a href="demo.html" class="active">Demo &amp; Videos</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-outline">Contact us</a>
+      <a href="#book" class="btn btn-primary">Book free demo</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="section-tight section-alt">
+  <div class="container">
+    <p class="eyebrow">Try before you enroll</p>
+    <h1>Watch a preview, then book a live demo</h1>
+    <p style="max-width:640px;">Each course has a short preview video below. When you're ready, book a free, live online demo session with a trainer — no recordings, real questions answered.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Course previews</p>
+      <h2>Demo videos</h2>
+    </div>
+    <div class="grid grid-3" id="videoGrid"></div>
+  </div>
+</section>
+
+<section class="section section-alt" id="book">
+  <div class="container" style="max-width:720px;">
+    <div class="section-head">
+      <p class="eyebrow">Book a session</p>
+      <h2>Reserve a free online demo</h2>
+      <p>Fill this in and our sales team will confirm a time by phone or email.</p>
+    </div>
+    <div class="card">
+      <form id="demoForm">
+        <div class="form-grid">
+          <div class="field"><label for="dName">Full name</label><input id="dName" required></div>
+          <div class="field"><label for="dPhone">Phone</label><input id="dPhone" type="tel" required></div>
+          <div class="field full"><label for="dEmail">Email</label><input id="dEmail" type="email" required></div>
+          <div class="field full">
+            <label for="dCourse">Course you're interested in</label>
+            <select id="dCourse"></select>
+          </div>
+          <div class="field"><label for="dDate">Preferred date</label><input id="dDate" type="date" required></div>
+          <div class="field"><label for="dSlot">Preferred time</label>
+            <select id="dSlot">
+              <option>Morning (9–12)</option>
+              <option>Afternoon (12–4)</option>
+              <option>Evening (4–8)</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top:16px;">Book my free demo</button>
+        <div class="form-success" id="demoSuccess">You're booked in — we'll confirm your slot by phone or email shortly.</div>
+        <p class="form-note">Submitting this form saves your request to our booking list so the sales team can follow up.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">ANZEE TECH SOLUTION</div>
+        <p style="color:#a9bde3;font-size:.88rem;max-width:280px;">IT courses, freelance development, content writing and kids' coding — in Madurai and online.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer-list">
+          <li><a href="courses.html">All courses</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="demo.html">Demo &amp; videos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Careers</h4>
+        <ul class="footer-list">
+          <li><a href="services.html#careers">Sales team</a></li>
+          <li><a href="services.html#careers">System administrator</a></li>
+          <li><a href="services.html#careers">Marketing team</a></li>
+          <li><a href="services.html#careers">IT trainer</a></li>
+          <li><a href="services.html#careers">Freelancer projects</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit or call</h4>
+        <p style="font-size:.88rem;">Abijeet Plaza, Ext Rd, Park Town,<br>Thabaal Thanthi Nagar, Bama Nagar,<br>P&amp;T Nagar, Madurai, Tamil Nadu 625017</p>
+        <p style="font-size:.88rem;"><a href="tel:+919159835086">091598 35086</a></p>
+        <a href="contact.html" class="btn btn-ghost" style="margin-top:6px;">Full contact details</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Anzee Tech Solution. All rights reserved.</span>
+      <span>4.9★ · 274 reviews on Justdial</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/db.js"></script>
+<script src="assets/main.js"></script>
+<script>
+  const videoGrid = document.getElementById("videoGrid");
+  const featured = ANZEE_COURSES.slice(0, 9);
+  videoGrid.innerHTML = featured.map(c => `
+    <div class="video-card">
+      <div class="video-thumb">
+        <button class="play-btn" aria-label="Play preview for ${c.name}"></button>
+        <span>${c.cat}</span>
+      </div>
+      <div class="video-info">
+        <h3 style="font-size:1rem;margin-bottom:4px;">${c.name} — course preview</h3>
+        <p style="font-size:.85rem;margin:0;">A short walkthrough of what this course covers.</p>
+      </div>
+    </div>
+  `).join("");
+  videoGrid.querySelectorAll(".play-btn").forEach(btn => {
+    btn.addEventListener("click", () => alert("Video preview placeholder — replace with your uploaded demo video."));
+  });
+
+  const dCourse = document.getElementById("dCourse");
+  dCourse.innerHTML = ANZEE_COURSES.map(c => `<option>${c.name}</option>`).join("");
+
+  document.getElementById("demoForm").addEventListener("submit", e => {
+    e.preventDefault();
+    AnzeeDB.addBooking({
+      name: dName.value, phone: dPhone.value, email: dEmail.value,
+      course: dCourse.value, date: dDate.value, slot: dSlot.value
+    });
+    document.getElementById("demoSuccess").classList.add("show");
+    e.target.reset();
+  });
+</script>
+</body>
+</html>

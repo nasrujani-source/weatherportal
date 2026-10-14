@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Anzee Tech Solution</title>
+<meta name="description" content="Articles from the Anzee Tech Solution content team on courses, careers and technology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="offer-strip">Every course, every batch — <strong>10% off</strong>, always. Ask us at enrollment.</div>
+
+<header class="site-header">
+  <div class="header-row">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">AT</span>
+      <span class="logo-text">ANZEE TECH SOLUTION<small>IT Training &amp; Freelance Services</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="services.html">Services &amp; Careers</a>
+      <a href="demo.html">Demo &amp; Videos</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-outline">Contact us</a>
+      <a href="demo.html" class="btn btn-primary">Book free demo</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="section-tight section-alt">
+  <div class="container">
+    <p class="eyebrow">From our content team</p>
+    <h1>Blog</h1>
+    <p style="max-width:640px;">Notes on courses, careers and the tools we teach — written by the same content writers who take on client work through Anzee.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="display:grid;grid-template-columns:2fr 1fr;gap:44px;align-items:start;">
+    <div id="postList" style="display:flex;flex-direction:column;gap:20px;"></div>
+
+    <aside>
+      <div class="admin-box" id="adminBox">
+        <h3 style="margin-bottom:10px;">Admin</h3>
+        <div id="loginForm">
+          <p style="font-size:.85rem;">Log in to publish a new post.</p>
+          <div class="field" style="margin-bottom:10px;">
+            <label for="adminPass">Password</label>
+            <input id="adminPass" type="password" placeholder="••••••••">
+          </div>
+          <button class="btn btn-primary btn-block" id="loginBtn">Log in</button>
+          <p class="form-note" id="loginError" style="display:none;color:#b3311c;">Incorrect password.</p>
+        </div>
+
+        <div id="composer" style="display:none;">
+          <p style="font-size:.85rem;">Logged in as admin.</p>
+          <div class="field" style="margin-bottom:10px;"><label for="pTitle">Title</label><input id="pTitle"></div>
+          <div class="field" style="margin-bottom:10px;"><label for="pAuthor">Author</label><input id="pAuthor" value="Anzee Content Team"></div>
+          <div class="field" style="margin-bottom:10px;"><label for="pExcerpt">Short excerpt</label><textarea id="pExcerpt" rows="2"></textarea></div>
+          <div class="field" style="margin-bottom:14px;"><label for="pBody">Full post</label><textarea id="pBody" rows="5"></textarea></div>
+          <button class="btn btn-primary btn-block" id="publishBtn">Publish post</button>
+          <button class="btn btn-ghost btn-block" id="logoutBtn" style="margin-top:8px;">Log out</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">ANZEE TECH SOLUTION</div>
+        <p style="color:#a9bde3;font-size:.88rem;max-width:280px;">IT courses, freelance development, content writing and kids' coding — in Madurai and online.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer-list">
+          <li><a href="courses.html">All courses</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="demo.html">Demo &amp; videos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Careers</h4>
+        <ul class="footer-list">
+          <li><a href="services.html#careers">Sales team</a></li>
+          <li><a href="services.html#careers">System administrator</a></li>
+          <li><a href="services.html#careers">Marketing team</a></li>
+          <li><a href="services.html#careers">IT trainer</a></li>
+          <li><a href="services.html#careers">Freelancer projects</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit or call</h4>
+        <p style="font-size:.88rem;">Abijeet Plaza, Ext Rd, Park Town,<br>Thabaal Thanthi Nagar, Bama Nagar,<br>P&amp;T Nagar, Madurai, Tamil Nadu 625017</p>
+        <p style="font-size:.88rem;"><a href="tel:+919159835086">091598 35086</a></p>
+        <a href="contact.html" class="btn btn-ghost" style="margin-top:6px;">Full contact details</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Anzee Tech Solution. All rights reserved.</span>
+      <span>4.9★ · 274 reviews on Justdial</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/db.js"></script>
+<script src="assets/main.js"></script>
+<script>
+  const postList = document.getElementById("postList");
+
+  function fmtDate(d) {
+    return new Date(d).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+  }
+
+  function renderPosts() {
+    const posts = AnzeeDB.getPosts();
+    postList.innerHTML = posts.map(p => `
+      <article class="post-card">
+        <div class="post-meta">${p.author} · ${fmtDate(p.date)}</div>
+        <h3>${p.title}</h3>
+        <p>${p.excerpt}</p>
+        <details>
+          <summary style="cursor:pointer;color:var(--blue-700);font-weight:600;font-size:.88rem;">Read full post</summary>
+          <p style="margin-top:10px;">${p.body}</p>
+        </details>
+        ${p.id.startsWith("p") ? `<button class="btn btn-ghost" data-del="${p.id}" style="margin-top:10px;font-size:.8rem;">Delete (admin)</button>` : ""}
+      </article>
+    `).join("");
+
+    postList.querySelectorAll("[data-del]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (!AnzeeDB.isAdmin()) return alert("Log in as admin to delete posts.");
+        AnzeeDB.deletePost(btn.dataset.del);
+        renderPosts();
+      });
+    });
+  }
+
+  function refreshAdminUI() {
+    const loggedIn = AnzeeDB.isAdmin();
+    document.getElementById("loginForm").style.display = loggedIn ? "none" : "block";
+    document.getElementById("composer").style.display = loggedIn ? "block" : "none";
+  }
+
+  document.getElementById("loginBtn").addEventListener("click", () => {
+    const ok = AnzeeDB.login(document.getElementById("adminPass").value);
+    document.getElementById("loginError").style.display = ok ? "none" : "block";
+    if (ok) refreshAdminUI();
+  });
+
+  document.getElementById("logoutBtn").addEventListener("click", () => {
+    AnzeeDB.logout();
+    refreshAdminUI();
+  });
+
+  document.getElementById("publishBtn").addEventListener("click", () => {
+    const title = document.getElementById("pTitle").value.trim();
+    const body = document.getElementById("pBody").value.trim();
+    if (!title || !body) return alert("Add at least a title and a full post before publishing.");
+    AnzeeDB.addPost({
+      title,
+      author: document.getElementById("pAuthor").value || "Anzee Content Team",
+      excerpt: document.getElementById("pExcerpt").value || body.slice(0, 140) + "…",
+      body
+    });
+    ["pTitle", "pExcerpt", "pBody"].forEach(id => document.getElementById(id).value = "");
+    renderPosts();
+  });
+
+  refreshAdminUI();
+  renderPosts();
+</script>
+</body>
+</html>

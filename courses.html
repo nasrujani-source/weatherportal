@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Courses — Anzee Tech Solution</title>
+<meta name="description" content="Browse Anzee Tech Solution's IT courses: AWS, Azure, CCNA, Cybersecurity with AI, Data Science, Power BI, Python, Full Stack, UI/UX, Digital Marketing, Kids Coding and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="offer-strip">Every course, every batch — <strong>10% off</strong>, always. Ask us at enrollment.</div>
+
+<header class="site-header">
+  <div class="header-row">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">AT</span>
+      <span class="logo-text">ANZEE TECH SOLUTION<small>IT Training &amp; Freelance Services</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html" class="active">Courses</a>
+      <a href="services.html">Services &amp; Careers</a>
+      <a href="demo.html">Demo &amp; Videos</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-outline">Contact us</a>
+      <a href="demo.html" class="btn btn-primary">Book free demo</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="section-tight section-alt">
+  <div class="container">
+    <p class="eyebrow">Course catalog</p>
+    <h1>21 core specializations — and 100+ courses &amp; services overall</h1>
+    <p style="max-width:640px;">Every course below carries a standing 10% discount and opens with a free live demo session. Don't see something specific — ask us; we run over 100 courses and services in total.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-cat="all">All courses</button>
+    </div>
+    <div class="grid grid-3" id="courseGrid"></div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container" style="text-align:center;">
+    <h2>Not sure which course fits your goal?</h2>
+    <p style="max-width:560px;margin:0 auto 20px;">Book a free demo session and talk it through with a trainer before you enroll in anything.</p>
+    <a href="demo.html" class="btn btn-primary">Book a free demo</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">ANZEE TECH SOLUTION</div>
+        <p style="color:#a9bde3;font-size:.88rem;max-width:280px;">IT courses, freelance development, content writing and kids' coding — in Madurai and online.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer-list">
+          <li><a href="courses.html">All courses</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="demo.html">Demo &amp; videos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Careers</h4>
+        <ul class="footer-list">
+          <li><a href="services.html#careers">Sales team</a></li>
+          <li><a href="services.html#careers">System administrator</a></li>
+          <li><a href="services.html#careers">Marketing team</a></li>
+          <li><a href="services.html#careers">IT trainer</a></li>
+          <li><a href="services.html#careers">Freelancer projects</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit or call</h4>
+        <p style="font-size:.88rem;">Abijeet Plaza, Ext Rd, Park Town,<br>Thabaal Thanthi Nagar, Bama Nagar,<br>P&amp;T Nagar, Madurai, Tamil Nadu 625017</p>
+        <p style="font-size:.88rem;"><a href="tel:+919159835086">091598 35086</a></p>
+        <a href="contact.html" class="btn btn-ghost" style="margin-top:6px;">Full contact details</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Anzee Tech Solution. All rights reserved.</span>
+      <span>4.9★ · 274 reviews on Justdial</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/db.js"></script>
+<script src="assets/main.js"></script>
+<script>
+  const grid = document.getElementById("courseGrid");
+  const filterBar = document.getElementById("filterBar");
+
+  ANZEE_CATEGORIES.forEach(cat => {
+    const btn = document.createElement("button");
+    btn.className = "filter-btn";
+    btn.dataset.cat = cat;
+    btn.textContent = cat;
+    filterBar.appendChild(btn);
+  });
+
+  function renderCourses(cat) {
+    const list = cat === "all" ? ANZEE_COURSES : ANZEE_COURSES.filter(c => c.cat === cat);
+    grid.innerHTML = list.map(c => `
+      <div class="card card-corner course-card">
+        <span class="tag">${c.cat}</span>
+        <h3>${c.name}</h3>
+        <div class="meta">${c.level}</div>
+        <p>${c.desc}</p>
+        <div class="price-row">
+          <span class="tag tag-offer">10% off</span>
+        </div>
+        <a href="demo.html" class="btn btn-outline btn-block" style="margin-top:16px;">Book a free demo</a>
+      </div>
+    `).join("");
+  }
+
+  filterBar.addEventListener("click", e => {
+    const btn = e.target.closest(".filter-btn");
+    if (!btn) return;
+    filterBar.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    renderCourses(btn.dataset.cat);
+  });
+
+  renderCourses("all");
+</script>
+</body>
+</html>

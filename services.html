@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services &amp; Careers — Anzee Tech Solution</title>
+<meta name="description" content="Freelance front-end and back-end (Python) development, content writing, and open roles at Anzee Tech Solution: sales, system administrator, marketing, IT trainer and freelancer projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="offer-strip">Every course, every batch — <strong>10% off</strong>, always. Ask us at enrollment.</div>
+
+<header class="site-header">
+  <div class="header-row">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">AT</span>
+      <span class="logo-text">ANZEE TECH SOLUTION<small>IT Training &amp; Freelance Services</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="services.html" class="active">Services &amp; Careers</a>
+      <a href="demo.html">Demo &amp; Videos</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-outline">Contact us</a>
+      <a href="demo.html" class="btn btn-primary">Book free demo</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="section-tight section-alt">
+  <div class="container">
+    <p class="eyebrow">Services</p>
+    <h1>Work with us beyond the classroom</h1>
+    <p style="max-width:640px;">Alongside training, our studio takes on client work — a way for advanced students and trainers to build real, shipped projects together.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2">
+      <div class="card card-corner">
+        <span class="tag">Writing</span>
+        <h3>Content writing &amp; blogging</h3>
+        <p>Articles, course copy and technical blog posts — written in-house and published on this site. See examples on our <a href="blog.html">blog</a>.</p>
+      </div>
+      <div class="card card-corner">
+        <span class="tag">Development</span>
+        <h3>Front-end &amp; back-end development</h3>
+        <p>Web front-ends paired with Python back-end services — built for small businesses and used as live coursework for our Full Stack students.</p>
+      </div>
+      <div class="card card-corner">
+        <span class="tag">Learning</span>
+        <h3>Online demo sessions</h3>
+        <p>Every course opens with a free, live session so you can meet a trainer before enrolling. <a href="demo.html">Book one here</a>.</p>
+      </div>
+      <div class="card card-corner">
+        <span class="tag">Freelance</span>
+        <h3>Freelancer project placement</h3>
+        <p>Ready students take on paid, project-based briefs for real clients, supervised by a trainer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="careers">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Careers at Anzee</p>
+      <h2>Open roles</h2>
+      <p>We're hiring across five tracks. Apply below — tell us which role fits and we'll follow up.</p>
+    </div>
+    <div class="grid grid-3" style="margin-bottom:44px;">
+      <div class="card">
+        <h3>Sales team</h3>
+        <p>Talk to prospective students, run demo bookings through to enrollment, and help people pick the right course.</p>
+      </div>
+      <div class="card">
+        <h3>System administrator</h3>
+        <p>Keep our labs, servers and classroom systems running for both in-person and online batches.</p>
+      </div>
+      <div class="card">
+        <h3>Marketing team</h3>
+        <p>Own campaigns across social, search and local outreach for course enrollment and brand visibility.</p>
+      </div>
+      <div class="card">
+        <h3>IT trainer</h3>
+        <p>Teach live batches in your specialization — cloud, security, data, development or design.</p>
+      </div>
+      <div class="card">
+        <h3>Freelancer (project-based)</h3>
+        <p>Take on client briefs in development, design or content, alongside or after your course.</p>
+      </div>
+    </div>
+
+    <div class="card" style="max-width:640px;">
+      <h3>Apply for a role</h3>
+      <form id="careerForm">
+        <div class="form-grid">
+          <div class="field"><label for="cName">Full name</label><input id="cName" required></div>
+          <div class="field"><label for="cPhone">Phone</label><input id="cPhone" type="tel" required></div>
+          <div class="field full"><label for="cEmail">Email</label><input id="cEmail" type="email" required></div>
+          <div class="field full">
+            <label for="cRole">Role you're applying for</label>
+            <select id="cRole">
+              <option>Sales team</option>
+              <option>System administrator</option>
+              <option>Marketing team</option>
+              <option>IT trainer</option>
+              <option>Freelancer (project-based)</option>
+            </select>
+          </div>
+          <div class="field full"><label for="cNote">Tell us about yourself</label><textarea id="cNote" rows="3"></textarea></div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top:16px;">Submit application</button>
+        <div class="form-success" id="careerSuccess">Thanks — your application has been recorded. Our team will reach out shortly.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">ANZEE TECH SOLUTION</div>
+        <p style="color:#a9bde3;font-size:.88rem;max-width:280px;">IT courses, freelance development, content writing and kids' coding — in Madurai and online.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer-list">
+          <li><a href="courses.html">All courses</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="demo.html">Demo &amp; videos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Careers</h4>
+        <ul class="footer-list">
+          <li><a href="services.html#careers">Sales team</a></li>
+          <li><a href="services.html#careers">System administrator</a></li>
+          <li><a href="services.html#careers">Marketing team</a></li>
+          <li><a href="services.html#careers">IT trainer</a></li>
+          <li><a href="services.html#careers">Freelancer projects</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit or call</h4>
+        <p style="font-size:.88rem;">Abijeet Plaza, Ext Rd, Park Town,<br>Thabaal Thanthi Nagar, Bama Nagar,<br>P&amp;T Nagar, Madurai, Tamil Nadu 625017</p>
+        <p style="font-size:.88rem;"><a href="tel:+919159835086">091598 35086</a></p>
+        <a href="contact.html" class="btn btn-ghost" style="margin-top:6px;">Full contact details</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Anzee Tech Solution. All rights reserved.</span>
+      <span>4.9★ · 274 reviews on Justdial</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/db.js"></script>
+<script src="assets/main.js"></script>
+<script>
+  document.getElementById("careerForm").addEventListener("submit", e => {
+    e.preventDefault();
+    AnzeeDB.addMessage({
+      type: "career-application",
+      name: cName.value, phone: cPhone.value, email: cEmail.value,
+      role: cRole.value, note: cNote.value
+    });
+    document.getElementById("careerSuccess").classList.add("show");
+    e.target.reset();
+  });
+</script>
+</body>
+</html>
